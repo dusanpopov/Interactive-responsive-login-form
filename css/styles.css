@@ -1,0 +1,371 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+
+}
+
+html{
+    font-size: 62.5%;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0, .8), rgba(0,0,0, .7)), url("../images/background.jpg") center no-repeat;
+    background-size: cover;
+
+}
+
+.banner{
+    color: white;
+    width: 75rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner__heading{
+    font-size: 8rem;
+    text-transform: uppercase;
+    margin-bottom: 8rem;
+    border-top: .7rem solid white;
+    border-bottom: .7rem solid white;
+    text-align: center;
+}
+
+.arrow{
+    font-size: 5rem;
+    margin-bottom: 3rem;
+    animation: arrowAnimation 3s infinite;
+}
+
+.banner__button{
+    width: 20rem;
+    padding: 1.5rem;
+    font-size: 2.2rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    background: transparent;
+    color: white;
+    border-radius: 5rem;
+    border: .1rem solid white;
+    outline: none;
+    transition: transform .3s;
+
+}
+
+.banner__button:hover{
+    transform: translateY(-.5rem);
+}
+
+
+@keyframes arrowAnimation {
+
+    0%{
+        transform: translateY(0)
+    }
+
+    20%{
+        transform: translateY(0)
+    }
+
+    40%{
+        transform: translateY(-3rem)
+    }
+    50%{
+        transform: translateY(0)
+    }
+
+    60%{
+        transform: translateY(-1.5rem)
+    }
+
+    80%{
+        transform: translateY(0)
+    }
+
+    100% {
+        transform: translateY(0)
+    }
+}
+
+.container__form{
+
+  
+
+    display: flex;
+    width: 80rem;
+    height: 60rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 2rem 5rem rgba(0, 0, 0, .4);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s;
+}
+
+.form-signup{
+    width: 50%;
+    background-color: #232328;
+    padding: 12rem 5rem;
+}
+
+.form-input{
+    width: 30rem;
+    font-size: 1.8rem;
+    letter-spacing: .1rem;
+    color: #cc683c;
+    background-color: transparent;
+    border: none;
+    border-bottom: .2rem solid white;
+    outline: none;
+    margin-bottom: 5rem;
+    padding: .8rem 0rem;
+    transition: border-bottom-color .6s;
+}
+
+.form-signup__paragraph{
+    color: white;
+    font-size: 1.8rem;
+    letter-spacing: .1rem;
+    font-weight: 200;
+    margin-bottom: .8rem;
+}
+
+.form-input:focus{
+    border-bottom-color: #cc683c;
+}
+
+label{
+    color: white;
+    font-size: 1.5rem;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+}
+
+.form-signup__button{
+    display: block;
+    margin-top: .8rem;
+}
+
+.form-signup input[type="checkbox"]{
+    position: relative;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 3rem;
+    height: 1.5rem;
+    background-color: #eee;
+    outline: none;
+    border-radius: 2rem;
+    margin: 0rem .8rem;
+    box-shadow: inset 0 0 1rem rgba(0, 0, 0, .4);
+    transition: background-color .5s;
+}
+
+.form-signup input:checked[type="checkbox"]{
+    background-color: #cc683c;
+}
+.form-signup input:checked[type="checkbox"]::before{
+    left: 18px;
+}
+
+.form-signup input[type="checkbox"]::before{
+    content: '';
+    width: 1.7rem;
+    height: 1.7rem;
+    background-color: #aaa;
+    position: absolute;
+    border-radius: 50%;
+    top: -.1rem;
+    left: -.4rem;
+    box-shadow: 0 .2rem .5rem rgba(0, 0, 0, .4);
+    transition: left .5s;
+}
+
+.form-signup__button{
+    display: block;
+    margin-top: 8rem;
+    width: 15rem;
+    padding: .8rem .5rem;
+    background-color: transparent;
+    color: white;
+    border: .2rem solid white;
+    border-radius: 5rem;
+    outline: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+}
+
+
+.form-signup__button:hover{
+    background-color: black;
+    transition: all .5s;
+}
+
+.button-close{
+    position: absolute;
+    bottom: 1%;
+    right: 1%;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+.container__header{
+    width: 50%;
+    background: linear-gradient(to top, rgba(0,0,0, .4), rgba(0,0,0,.2)), url("../images/article.jpg") center no-repeat;
+    background-size: cover;
+    box-shadow: -1rem 0 3rem rgba(0,0,0,.3);
+    position: relative;
+}
+
+.header__heading{
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%);
+    text-align: center;
+    font-size: 4rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    color: white;
+}
+
+
+/* JS Helper classes */
+
+.banner__close{
+    display:none;
+}
+
+.banner__show{
+    display: flex;
+}
+
+.container__form-display-show{
+    opacity: 1;
+    visibility: visible;
+}
+
+.container__form-display-close{
+    opacity: 0;
+    visibility: hidden;
+}
+
+.container_show{
+    background: linear-gradient(rgba(0,0,0, .8), rgba(0,0,0, .7)), url("../images/background.jpg") center no-repeat;
+    background-size: cover;
+}
+
+
+
+/* Media queries */
+
+
+@media(max-width: 85rem) {
+    .container__form {
+        width: 60rem;
+        height: 40rem;
+    }
+
+    .form-signup {
+        padding: 5rem 3rem;
+    }
+
+    .form-input {
+        width: 20rem;
+        font-size: 1.4rem;
+        margin-bottom: 3rem;
+        padding: .7rem 0rem;
+    }
+
+    .form-signup__paragraph {
+        font-size: 1.5rem;
+    }
+
+    .label {
+        font-size: 1.3rem;
+    }
+
+    .form-signup input[type="checkbox"] {
+        width: 2.5rem;
+        height: 1.2rem;
+    }
+
+    .form-signup input[type="checkbox"]::before {
+        width: 1.4rem;
+        height: 1.4rem;
+    }
+
+    .form-signup button {
+        margin-top: 5rem;
+        width: 12rem;
+        padding: .6rem .4rem;
+        font-size: 1.3rem;
+        border-width: .1rem;
+    }
+
+    .header__heading {
+        font-size: 3rem;
+    }
+}
+
+@media(max-width: 80rem) {
+    .banner {
+        width: 45rem;
+    }
+
+    .banner-heading {
+        font-size: 6rem;
+        margin-bottom: 4rem;
+        border-width: .4rem;
+    }
+
+    .arrow {
+        font-size: 3rem;
+    }
+
+    .banner__button {
+        width: 15rem;
+        padding: 1rem;
+        font-size: 1.5rem;
+    }
+}
+
+@media(max-width: 65rem) {
+    .container__header{
+        display: none;
+    }
+
+    .container__form {
+        width: 30rem;
+    }
+
+    .form-signup {
+        width: 100%;
+    }
+}
+
+@media(max-width: 50rem) {
+    .banner {
+        width: 30rem;
+    }
+
+    .banner__heading {
+        font-size: 4rem;
+    }
+}
